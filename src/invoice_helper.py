@@ -4,6 +4,8 @@ from docxtpl import DocxTemplate
 
 def digital_to_chinese(digital):
     str_digital = str(digital)
+    if str_digital.endswith(".0") or str_digital.endswith(".00"):
+        str_digital = str_digital.split(".")[0]
     chinese = {'1': '壹', '2': '贰', '3': '叁', '4': '肆', '5': '伍', '6': '陆', '7': '柒', '8': '捌', '9': '玖', '0': '零'}
     chinese2 = ['拾', '佰', '仟', '万', '厘', '分', '角']
     jiao = ''
